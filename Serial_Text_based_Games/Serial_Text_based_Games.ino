@@ -2,10 +2,6 @@
 
 int STATE = 0;
 
-boolean pressing1 = false;
-boolean pressing2 = false;
-boolean pressing3 = false;
-
 boolean typeStart = false;
 boolean enterSelection = false;
 

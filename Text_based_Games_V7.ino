@@ -1,3 +1,5 @@
+
+
 #include <LiquidCrystal.h>
 
 LiquidCrystal lcd(4, 6, 10, 11, 12, 13);
@@ -76,9 +78,14 @@ void loop() {
   if (STATE == 3) {
     lcd.clear();
     lcd.print("You Win");
-    Serial.print("You Win");
     delay(3000);
     lcd.clear();
+    lcd.print ("You are");
+    lcd.setCursor(0,1);
+    lcd.print("fucking good!!!");
+    delay(2000);
+    lcd.clear();
+     
     STATE = 0;
   }
   if (STATE == 6) {
@@ -88,9 +95,13 @@ void loop() {
       lcd.clear();
       lcd.print ("OUPS! Baseball");
       lcd.setCursor (0, 1);
-      lcd.print ("bat in your face");
+      lcd.print ("bat in your face!");
       delay(2000);
       lcd.clear();
+      lcd.print ("Try again!");
+      delay(2000);
+      lcd.clear();
+      
       buttonState1 = 0;
       STATE = 0;
     }
@@ -113,6 +124,9 @@ void loop() {
       lcd.print ("sleep");
       delay(2000);
       lcd.clear();
+      lcd.print ("Try again!");
+      delay(2000);
+      lcd.clear();
       buttonState3 = 0;
       STATE = 0;
     }
@@ -133,6 +147,10 @@ void loop() {
       lcd.setCursor(0,0);
       lcd.print ("ate by rats");
       delay(2000);
+      lcd.clear();
+      lcd.print ("Try again!");
+      delay(2000);
+      lcd.clear();
       
       STATE = 0;
     }
@@ -143,14 +161,19 @@ void loop() {
       lcd.print ("Stabed 48 times");
       delay(2000);
       lcd.clear();
+      lcd.print ("Try again!");
+      delay(2000);
+      lcd.clear();
       STATE = 0;
     }
 
     if (buttonState3 == HIGH) {
 
       lcd.clear();
-      lcd.print ("Got home safe");
-      delay(2000);
+      lcd.print("You're tired but");
+      lcd.setCursor(0,1);
+      lcd.print ("Got home safe!");
+      delay(3000);
       lcd.clear();
       STATE = 3;
     }
@@ -205,7 +228,7 @@ void question2() {
   lcd.print("to do next?");
   delay(2000);
   lcd.clear();
-  lcd.print ("1:Sleep on a bench");
+  lcd.print ("1:Sleep on a");
   lcd.setCursor (0, 1);
   lcd.print ("bench");
   delay(2000);
@@ -214,7 +237,8 @@ void question2() {
   delay(2000);
   lcd.clear();
   lcd.print ("3:Run!.");
-  delay(300);
+  delay(2000);
+  lcd.clear();
 
   STATE = 7;
 }

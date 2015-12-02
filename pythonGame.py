@@ -1,25 +1,18 @@
-# import serial
-# ser = serial.Serial("/dev/cu.usbmodem1411",9600)
-# print(ser.name)
+ import serial
+ ser = serial.Serial("/dev/cu.usbmodem1411",9600)
+ print(ser.name)
 
 STATE = 0;
 
 while(True):
     if(STATE == 0):
-        print("State 0")
-        ser.write()
-        command = input("What state do you want to go to")
-        print(command)
-        if(command == "left"):
-            print("We are going to state 1")
-            STATE = 1
+        print("November,1982. You wake up in the subway in the Bronx.")
+        STATE = 1
 
-        elif(command == "right"):
-            STATE = 2
 
     if(STATE == 1):
-        print("State 1")
-        command = input("What do you want to do?  Go left  Go right Sleep in the station")
+
+        command = input("What do you want to do?  Go left?  Go right?   Sleep in the station?  Type your answer : ")
         command = command.strip()
         print(command)
         if(command == "Go left"):
@@ -27,17 +20,40 @@ while(True):
             STATE = 0
         elif(command == "Go right"):
             print("You are safe now")
+
+            ser.write(MELODY[])
+
             STATE = 2
+
         elif(command =="Sleep in the station"):
-            print("Killed in your sleep")
+            print("somebody killed you in your sleep")
             STATE = 0
 
     if(STATE == 2):
-        print("State 2")
+
+        command = input("what to you want to do next?  Sleep on a bench?  Grab a taxi?  Run?  Type your answer : ")
+        command = command.strip()
+        print(command)
+        if(command == "Sleep on a bench"):
+            print("You've been eaten by rats")
+            STATE = 0
+        elif(command == "Grab a taxi"):
+            print("You've been stabed 48 times")
+            STATE = 0
+        elif(command == "Run"):
+            print("You got home safe")
+
+            ser.write(MELODY[])
+            
+            STATE = 3
+
+    if (STATE == 3):
+        print("You win!! You are fucking good")
+
         break
 
 
 
-print("Thank you for playing")
+print("Reset the game if you want to play again")
 # ser.write(command)
 # ser.close()
